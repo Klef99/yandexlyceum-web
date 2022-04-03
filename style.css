@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+
+#content{
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    height: 700px;
+    color: white;
+    background-color: black;
+}
