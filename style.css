@@ -8,9 +8,10 @@ body{
 
 #content{
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 390px;
-    height: 1000px;
+    height: 400px;
     color: white;
     background-color: #ADD8E6;
     position: relative;
@@ -60,4 +61,31 @@ body{
     position: relative;
     top: 5px;
     left: 20px;
+}
+
+#pole_to_image{
+    height: 295px;
+    width: 370px;
+    background-color: black;
+    top: 10px;
+    position: relative;
+}
+
+.pole_change_photo{
+    background-color: green;
+    width: 370px;
+    height: 25px;
+    color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo_for_model{
+    background-color: purple;
+    width: 370px;
+    height: 270px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
