@@ -1,0 +1,72 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 350px;
+    background-color: purple;
+}
+
+#pole_authorization{
+    width: 250px;
+    height: 250px;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pole_login{
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pole_password{
+    width: 200px;
+    height: 100px;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pole_enter_login{
+    color: red;
+    text-align: center;
+}
+
+#pole_enter_password{
+    color: green;
+    text-align: center;
+}
+
+#pole_wrong_pas_or_log{
+    width: 250px;
+    height: 70px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+}
+
+.text_wrong_pas_or_log{
+    background-color: orange;
+    width: 230px;
+    height: 70px;
+}
+
+.text_wrong_pas_or_log > p{
+    text-align: center;
+}
