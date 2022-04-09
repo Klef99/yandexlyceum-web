@@ -3,6 +3,7 @@ body{
     flex-direction: column;
     align-items: center;
     margin: 0;
+    background-color: #896E69;
 }
 
 
@@ -11,11 +12,11 @@ body{
     align-items: center;
     flex-direction: column;
     width: 780px;
-    height: 1400px;
+    height: 540px;
     color: white;
-    background-color: #ADD8E6;
+    background-color: #F9F9FF;
     position: relative;
-    top: 53px;
+    top: 78px;
     z-index: 1;
 }
 
@@ -26,31 +27,18 @@ body{
     align-items: center;
     width: 800px;
     height: 70px;
-    background-color: #FFFFFF;
-    border-bottom: 3px ridge #4682B4;
-    border-left: 1px ridge #4682B4;
-    border-right: 1px ridge #4682B4;
+    background-color: #F9F9FF;
+    border-bottom: 3px ridge #D55448;
     position: fixed;
     z-index: 2;
 }
 
-.logo-header{
-    height: 40px;
-    width: 80px;
-    text-align: center;
-    background-color: red;
-    position: absolute;
-    left: 10px;
-    top: 5px;
-}
-
 #registration{
     height: 50px;
-    width: 320px;
+    width: 260px;
     text-align: center;
-    background-color: yellow;
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 10px;
     display: flex;
     flex-direction: row;
@@ -59,46 +47,63 @@ body{
 }
 
 #header_content{
-    height: 40px;
-    width: 160px;
+    height: 50px;
+    width: 400px;
     text-align: center;
     background-color: grey;
+    display: flex;
+    align-items: center;
     position: absolute;
-    top: 5px;
-    left: 20px;
+    top: 10px;
+    left: 10px;
 }
 
 #pole_to_image{
-    height: 295px;
-    width: 370px;
-    background-color: black;
-    top: 10px;
-    position: relative;
+    height: 513px;
+    width: 750px;
+    position: absolute;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .pole_change_photo{
-    background-color: green;
-    width: 370px;
-    height: 25px;
-    color: red;
+    background-color: #D55448;
+    width: 250px;
+    height: 35px;
+    color: #F9F9FF;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 3px;
+    font-family: Arial;
+    font-size: 16px;
+    border-radius: 15px;
 }
 
 .photo_for_model{
-    background-color: purple;
-    width: 370px;
-    height: 270px;
+    background-color: #F9F9FF;
+    width: 744px;
+    height: 460px;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+    top: 3px;
+    color: black;
+    border-bottom: 3px solid #D55448;
+    border-right: 3px solid #D55448;
+    border-left: 3px solid #D55448;
+    border-top: 3px solid #D55448;
+    border-radius: 15px;
 }
 
 #sign_in_button{
-    background-color: orange;
+    background-color: #896E69;
     width: 100px;
-    height: 45px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,16 +111,20 @@ body{
 }
 
 #sign_in_button > a{
-    color: black;
+    color: #F9F9FF;
     text-decoration: none;
     font-family: Arial;
     font-size: 16px;
 }
 
+#sign_in_button > a:hover{
+    color: #D55448;
+}
+
 #sign_up_button{
-    background-color: green;
+    background-color: #D55448;
     width: 150px;
-    height: 45px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,8 +132,23 @@ body{
 }
 
 #sign_up_button > a{
-    color: black;
+    color: #F9F9FF;
     text-decoration: none;
     font-family: Arial;
     font-size: 16px;
+}
+
+#sign_up_button > a:hover{
+    color: #896E69;
+}
+
+.recognition_photo{
+    background-color: red;
+    width: 200px;
+    height: 45px;
+    display; flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 20px;
 }
