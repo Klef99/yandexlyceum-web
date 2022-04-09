@@ -59,48 +59,6 @@ body{
     left: 10px;
 }
 
-#pole_to_image{
-    height: 513px;
-    width: 750px;
-    position: absolute;
-    top: 15px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.pole_change_photo{
-    background-color: #D55448;
-    width: 250px;
-    height: 35px;
-    color: #F9F9FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 3px;
-    font-family: Arial;
-    font-size: 16px;
-    border-radius: 15px;
-}
-
-.photo_for_model{
-    background-color: #F9F9FF;
-    width: 744px;
-    height: 460px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 3px;
-    color: black;
-    border-bottom: 3px solid #D55448;
-    border-right: 3px solid #D55448;
-    border-left: 3px solid #D55448;
-    border-top: 3px solid #D55448;
-    border-radius: 15px;
-}
-
 #sign_in_button{
     background-color: #896E69;
     width: 100px;
@@ -151,13 +109,12 @@ body{
     align-items: center;
     font-family: Arial;
     font-size: 26px;
-    color: #FFA577;
-    text-shadow: 1px 1px 0px #896E69;
+    color: #896E69;
 }
 
 .recognition_photo > a{
     text-decoration: none;
-    color: #FFA577;
+    color: #896E69;
 }
 
 .my_recognition{
@@ -168,10 +125,11 @@ body{
     align-items: center;
     font-family: Arial;
     font-size: 26px;
-    color: #896E69;
+    color: #FFA577;
+    text-shadow: 1px 1px 0px #896E69;
 }
 
 .my_recognition > a{
     text-decoration: none;
-    color: #896E69;
+    color: #FFA577;
 }
