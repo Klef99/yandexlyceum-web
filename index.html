@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <title>Главная</title>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Главная</title>
     </head>
     <body>
         <div id="header">
@@ -23,10 +23,12 @@
         <div id="content">
             <div id="pole_to_image">
                 <div class="photo_for_model">
-                    Поле для фотографии
+                    <div class="pole_change_photo">
+                        <input type="file" class="photo_from_pc" id="input_photo_from_pc" name="input_photo_from_pc" accept="image/*">
+                    </div>
                 </div>
-                <div class="pole_change_photo">
-                    Выбрать фотографию
+                <div class="pole_send_photo">
+                    <button class="button_send_photo_for_model" type="button">Отправить</button>
                 </div>
             </div>
         </div>
