@@ -1,0 +1,117 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: #896E69;
+}
+
+#content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: 250px;
+    top: 60px;
+    position: absolute;
+    background-color: #F9F9FF;
+    border-radius: 15px;
+}
+
+#pole_authorization{
+    width: 350px;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pole_login{
+    width: 340px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pole_password{
+    width: 340px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pole_enter_login{
+    font-family: Arial;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 15px;
+    height: 40px;
+    width: 300px;
+    color: #F9F9FF;
+    background-color: #FFA577;
+    border-bottom: 5px solid #D55448;
+    border-left: 5px solid #D55448;
+    border-top: 1px solid #D55448;
+    border-right: 1px solid #D55448;
+    caret-color: #896E69;
+}
+
+#pole_enter_login::placeholder{
+    color: #F9F9FF;
+}
+
+#pole_enter_login::selection{
+    background-color: #D55448;
+}
+
+#pole_enter_password{
+    font-family: Arial;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 15px;
+    height: 40px;
+    width: 300px;
+    color: #F9F9FF;
+    background-color: #FFA577;
+    border-bottom: 5px solid #D55448;
+    border-left: 5px solid #D55448;
+    border-top: 1px solid #D55448;
+    border-right: 1px solid #D55448;
+    caret-color: #896E69;
+}
+
+#pole_enter_password::placeholder{
+    color: #F9F9FF;
+}
+
+#pole_enter_password::selection{
+    background-color: #D55448;
+}
+
+.text_login{
+    font-family: Arial;
+    font-size: 26px;
+    color: #896E69;
+}
+
+.text_login::selection{
+    background-color: #D55448;
+    color: #F9F9FF;
+}
+
+.text_password{
+    font-family: Arial;
+    font-size: 26px;
+    color: #896E69;
+}
+
+.text_password::selection{
+    background-color: #D55448;
+    color: #F9F9FF;
+}

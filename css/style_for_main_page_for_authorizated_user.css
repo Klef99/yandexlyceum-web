@@ -1,0 +1,157 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background-color: #896E69;
+}
+
+
+#content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 780px;
+    height: 540px;
+    color: white;
+    background-color: #F9F9FF;
+    position: relative;
+    top: 78px;
+    z-index: 1;
+    border-radius: 15px;
+}
+
+
+#header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 800px;
+    height: 70px;
+    background-color: #F9F9FF;
+    border-bottom: 3px ridge #D55448;
+    position: fixed;
+    z-index: 2;
+}
+
+#personal_account{
+    height: 40px;
+    width: 190px;
+    text-align: center;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+}
+
+#header_content{
+    height: 50px;
+    width: 360px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+    top: 10px;
+    left: 10px;
+}
+
+#pole_to_image{
+    height: 513px;
+    width: 750px;
+    position: absolute;
+    top: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pole_change_photo{
+    background-color: #D55448;
+    width: 250px;
+    height: 35px;
+    color: #F9F9FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 3px;
+    font-family: Arial;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+.photo_for_model{
+    background-color: #F9F9FF;
+    width: 744px;
+    height: 460px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 3px;
+    color: black;
+    border-bottom: 3px solid #D55448;
+    border-right: 3px solid #D55448;
+    border-left: 3px solid #D55448;
+    border-top: 3px solid #D55448;
+    border-radius: 15px;
+}
+
+.recognition_photo{
+    width: 200px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 26px;
+    color: #FFA577;
+    text-shadow: 1px 1px 0px #896E69;
+}
+
+.recognition_photo > a{
+    text-decoration: none;
+    color: #FFA577;
+}
+
+.my_recognition{
+    width: 150px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 26px;
+    color: #896E69;
+}
+
+.my_recognition > a{
+    text-decoration: none;
+    color: #896E69;
+}
+
+.text_name_user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D55448;
+    height: 22px;
+    width: 190px;
+    font-family: Arial;
+    font-size: 22px;
+}
+
+.enter_in_personal_account_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #896E69;
+    height: 16px;
+    width: 125px;
+    font-family: Arial;
+    font-size: 16px;
+}
