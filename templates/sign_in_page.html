@@ -10,17 +10,30 @@
         <title>Войти в личный кабинет</title>
     </head>
     <body>
-        <div id="content">
-            <div id="pole_authorization">
-                <div id="pole_login">
-                    <div class="text_login">Логин</div>
-                    <input type="text" id="pole_enter_login" placeholder="Поле ввода логина">
-                </div>
-                <div id="pole_password">
-                    <div class="text_password">Пароль</div>
-                    <input type="text" id="pole_enter_password" placeholder="Поле ввода пароля">
-                </div>
-            </div>
+    <h1 class="my_recognition">{{title}}</h1>
+    <div id="content">
+    <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p id="pole_login" class="text_login">
+        {{ form.username.label }}
+        {{ form.username(class="form-control") }}<br>
+        {% for error in form.username.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p id="pole_password" class="text_password">
+        {{ form.password.label }}
+        {{ form.password(class="form-control", type="password") }}<br>
+        {% for error in form.password.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
         </div>
     </body>
 </html>
