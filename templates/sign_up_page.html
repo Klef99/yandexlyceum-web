@@ -3,24 +3,44 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-          crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="static/style_for_sign_up_page.css">
-        <title>Зарегистрироваться</title>
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+              crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="static/style_for_sign_in_page.css">
+        <title>Зарегестрироваться</title>
     </head>
+    {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
     <body>
-        <div id="content">
-            <div id="pole_authorization">
-                <div id="pole_login">
-                    <div class="text_login">Логин</div>
-                    <input type="text" id="pole_enter_login" placeholder="Поле ввода логина">
-                </div>
-                <div id="pole_password">
-                    <div class="text_password">Пароль</div>
-                    <input type="text" id="pole_enter_password" placeholder="Поле ввода пароля">
-                </div>
-            </div>
+    <h1 class="my_recognition">{{title}}</h1>
+    <div id="content">
+    <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <p id="pole_login">
+        {{ form.username.label }}
+        {{ form.username(class="form-control") }}
+        {% for error in form.username.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p id="pole_password">
+        {{ form.password.label }}
+        {{ form.password(class="form-control", type="password") }}
+        {% for error in form.password.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    </form>
         </div>
     </body>
 </html>

@@ -27,8 +27,8 @@ TEST_IMAGES_PATH, SAVE_PATH = r'C:\Users\Egor\Desktop\NTO Final\train_segmentati
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-SEGM_MODEL_PATH = "/Model Weights/segm-model_final.pth"
-OCR_MODEL_PATH = "/Model Weights/ocr-model-last.ckpt"
+SEGM_MODEL_PATH = "Model Weights/segm-model_final.pth"
+OCR_MODEL_PATH = "Model Weights/ocr-model-last.ckpt"
 
 CONFIG_JSON = {
     "alphabet": r""" !"'()+,-./0123456789:;=?IN[]АБВГДЕЖЗИКЛМНОПРСТУФХЦЧШЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяё№""",
