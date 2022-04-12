@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         <title>Главная</title>
     </head>
     <body>
@@ -21,16 +21,18 @@
             </div>
         </div>
         <div id="content">
-            <div id="pole_to_image">
-                <div class="photo_for_model">
-                    <div class="pole_change_photo">
-                        <input type="file" class="photo_from_pc" id="input_photo_from_pc" name="input_photo_from_pc" accept="image/*">
+            <form method="post" action="recogniting_photo">
+                <div id="pole_to_image">
+                    <div class="photo_for_model">
+                        <div class="pole_change_photo">
+                            <input type="file" class="photo_from_pc" id="photo_from_pc" name="input_photo_from_pc" accept="image/*"/>
+                        </div>
+                    </div>
+                    <div class="pole_send_photo">
+                        <input class="button_send_photo_for_model" type="submit" value="Отправить">
                     </div>
                 </div>
-                <div class="pole_send_photo">
-                    <button class="button_send_photo_for_model" type="button">Отправить</button>
-                </div>
-            </div>
+            </form>
         </div>
     </body>
 </html>
