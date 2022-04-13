@@ -17,15 +17,19 @@
             </div>
             <div id="registration">
                 <div id="sign_in_button">
-                    <a href="sign_in_page.html">Войти</a>
+                    <a>{{name}}</a>
                 </div>
                 <div id="sign_up_button">
-                    <a href="sign_up_page.html">Регистрация</a>
+                    <a href="logaut.html">Выход</a>
                 </div>
             </div>
         </div>
         <div id="content">
-
+            {% for item in scans%}
+            <div>
+                <a href="/download/{{item.id}}" download>{{item.filename}}</a>
+            </div>
+            {% endfor %}
         </div>
     </body>
 </html>

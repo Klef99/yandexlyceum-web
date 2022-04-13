@@ -19,6 +19,7 @@ body{
     top: 78px;
     z-index: 1;
     border-radius: 15px;
+    overflow: auto
 }
 
 

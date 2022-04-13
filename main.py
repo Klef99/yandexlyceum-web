@@ -1,11 +1,12 @@
 import os
 
-from flask import Flask, request, render_template, flash, url_for, send_file
+from flask import Flask, request, render_template, flash, url_for, send_file, session
 from model import get_predict
 from werkzeug.utils import secure_filename, redirect
 from forms import LoginForm, RegForm
 from data import db_session
 from data.users import User
+from data.scans import Scans
 from funcs import pass_check, pass_to_hash
 
 UPLOAD_FOLDER = 'scans'
@@ -17,17 +18,32 @@ app.secret_key = '379cc9d0797b7d3a445eae49288768c6'
 app.config['SECRET_KEY'] = '379cc9d0797b7d3a445eae49288768c6'
 
 
-
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+
+def get_user_from_sessions(ses):
+    res = ses['user']
+    user = db_sess.query(User).filter(User.hashedpass == res['hash'], User.salt == res['salt']).first()
+    return user
+
+
+@app.route('/logaut.html')
+def logaut():
+    session.pop('user')
+    return redirect('/')
 
 
 @app.route('/', methods=['POST', 'GET'])
 @app.route('/index.html', methods=['POST', 'GET'])
 def index():
     if request.method == 'GET':
-        return render_template('index.html')
+        if 'user' not in session:
+            return render_template('index.html')
+        else:
+            user = get_user_from_sessions(session)
+            return render_template('main_page_for_authorizated_user.html', name=user.name)
     elif request.method == 'POST':
         # check if the post request has the file part
         if 'input_photo_from_pc' not in request.files:
@@ -44,8 +60,19 @@ def index():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             # return redirect(url_for('uploaded_file', filename=filename))
             get_predict(filename)
+            if 'user' in session:
+                user = get_user_from_sessions(session)
+                os.rename(f'scans/{filename}', f'scans/id{user.id}_{filename}')
+                scan = Scans()
+                scan.filename = filename
+                scan.true_filename = f'scans/id{user.id}_{filename}'
+                scan.user = user
+                user.scans.append(scan)
+                db_sess.commit()
+                return send_file(scan.true_filename,
+                                 download_name=f'rec_{filename}', as_attachment=True)
             return send_file(f'scans/{filename}',
-                             attachment_filename=filename)
+                             download_name=f'rec_{filename}', as_attachment=True)
 
 
 @app.route('/sign_in_page.html', methods=['POST', 'GET'])
@@ -54,8 +81,8 @@ def sing_in_page():
     if form.validate_on_submit():
         user = db_sess.query(User).filter(User.name == form.username.data).first()
         if user is not None and pass_check(form.password.data, user.hashedpass, user.salt):
-            flash('Авторизация прошла успешно!')
-            return redirect('/')
+            session['user'] = {'hash': user.hashedpass, 'salt': user.salt}
+            return redirect('/index.html')
         else:
             flash('Не правильный логин или пароль', 'error')
     return render_template('sign_in_page.html', title='Авторизация', form=form)
@@ -72,7 +99,7 @@ def sing_up_page():
             user.hashedpass, user.salt = pass_to_hash(form.password.data)
             db_sess.add(user)
             db_sess.commit()
-            flash('Регистрация прошла успешно!')
+            session['user'] = {'hash': user.hashedpass, 'salt': user.salt}
             return redirect('/')
         else:
             flash('Такой логин уже есть', 'error')
@@ -81,7 +108,15 @@ def sing_up_page():
 
 @app.route('/my_recognitions_page.html')
 def my_recognitions_page():
-    return render_template('my_recognitions_page.html')
+    user = get_user_from_sessions(session)
+    return render_template('my_recognitions_page.html', name=user.name, scans=user.scans)
+
+
+@app.route('/download/<idx>')
+def download_file(idx):
+    scan = db_sess.query(Scans).filter(Scans.id == idx).first()
+    return send_file(scan.true_filename,
+                     download_name=scan.filename, as_attachment=True)
 
 
 if __name__ == '__main__':

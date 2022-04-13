@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
         <meta charset="UTF-8">
         <link rel="stylesheet"
               href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
@@ -8,12 +9,16 @@
               crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="static/style.css">
         <title>Главная</title>
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+<script type="text/javascript">
+  VK.init({ apiId: 8134616, onlyWidgets: true });
+</script>
     </head>
     <body>
         <div id="header">
             <div id="header_content">
                 <div class="recognition_photo"><a href="index.html">Распознавание</a></div>
-                <div class="my_recognition"><a href="my_recognitions_page.html">Мои сканы</a></div>
+                <div class="my_recognition"><a>Мои сканы</a></div>
             </div>
             <div id="registration">
                 <div id="sign_in_button">
@@ -36,5 +41,10 @@
                 </div>
             </div>
         </form>
+        <div id="vk_poll"></div>
+<div id="vk_community_messages"></div>
+<script type="text/javascript">
+  VK.Widgets.CommunityMessages("vk_community_messages", 212644000, {tooltipButtonText: "Есть вопрос?", expanded: 1});
+</script>
     </body>
 </html>
